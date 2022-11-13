@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capivara</title>
+</head>
+<body>
+
+<header>
+    <menu>
+    {% if current_user.is_authenticated %}
+
+        <item>
+            <a href="./user/">Usuários</a>
+        </item>
+        <item>Produtos</item>
+<!--        <item>Episódios</item>-->
+        <item><a href="{{ url_for('login_blueprint.logout') }}">Logout</a></item>
+
+    {% else %}
+        <item>
+            <item><a href="{{ url_for('login_blueprint.register') }}">Cadastre-se</a></item>
+        </item>
+        <item>
+            <a href="./login">Login</a>
+        </item>
+    {% endif %}
+    </menu>
+
+</header>
+
+<div>
+
+    <h1>Capivara Market</h1>
+
+    <p>Bem vindo ao projeto Capivara Market.
+    </p>
+
+</div>
+
+
+<footer>
+    <p>{{ now }}</p>
+</footer>
+
+</body>
+</html>

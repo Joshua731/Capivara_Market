@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+
+<form method="POST" action="{{ url_for('login_blueprint.register') }}">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.usuario.label }} {{ form.usuario() }}
+    </div>
+    <div>
+        {{ form.senha.label }} {{ form.senha() }}
+    </div>
+    <div>
+        {{ form.confirma.label }} {{ form.confirma() }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+
+
+</form>
+
+</body>
+</html>
